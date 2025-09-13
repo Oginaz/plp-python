@@ -11,7 +11,7 @@ def fetch_images(urls):
     - Checking safe headers
     - Respecting Ubuntu principles of community and sharing
     """
-    print("🌍 Ubuntu Image Fetcher")
+    print("Ubuntu Image Fetcher")
     print('"A person is a person through other persons."\n')
 
     # Create directory if it doesn't exist
@@ -30,7 +30,7 @@ def fetch_images(urls):
             # --- Precaution: Check important HTTP headers ---
             content_type = response.headers.get("Content-Type", "")
             if not content_type.startswith("image/"):
-                print(f"⚠️ Skipped: {url} (Not an image, Content-Type: {content_type})")
+                print(f"Skipped: {url} (Not an image, Content-Type: {content_type})")
                 continue
 
             # Extract filename or generate one
@@ -48,7 +48,7 @@ def fetch_images(urls):
             file_hash = hashlib.md5(file_bytes).hexdigest()
 
             if file_hash in downloaded_hashes:
-                print(f"⚠️ Duplicate skipped: {filename}")
+                print(f"Duplicate skipped: {filename}")
                 continue
             downloaded_hashes.add(file_hash)
 
